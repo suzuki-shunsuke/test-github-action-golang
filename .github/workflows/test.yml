@@ -13,3 +13,7 @@ jobs:
     - run: go mod download
     - run: go vet ./...
     - run: go test ./...
+    # use secret
+    - run: echo $FOO
+      env:
+        FOO: ${{ secrets.foo }}
